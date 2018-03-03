@@ -1,0 +1,4 @@
+H3.2	UStandard 2.11
+- Added modifier tone letters to IPA tab
+- Adjusted the button layout of suprasegmentals group in IPA tab
+- Added shortcuts for letters with diacritics and combining diacritical marks insertion
