@@ -30,3 +30,21 @@ Keyboard shortcuts are used in `UStandard.dotm`.
 
 \* Letters in old versions / 旧版字母  
 ⁺ Letters newly added / 新加入的字母
+
+## Vowel Letters / 元音字母
+
+|Letter<br>字母|IPA<br>国际音标|Shortcut<br>快捷键|Diacriticless<br>无附加符号|Note<br>说明|
+|:-|:-|:-|:-|:-|
+|Ää+|/a/|`Ctrl + :, A`|ae|e.g. 绯府正音 *<span style="color:blue">ǰ</span>i<span style="color:blue">ǟ</span>n* /t͡ɕjɛn˥/ (“坚”, firm),<br>Shanghainese *dhän* /dã˨˨˧/ (“打”, hit)|
+|Ëë|/ɤ/|`Ctrl + :, E`|eo||
+|Ïï|/ɯ/|`Ctrl + :, I`|ih|Also /ɨ/ or /ʅ/|
+|Öö|/ø/|`Ctrl + :, O`|oe||
+|Üü|/y/|`Ctrl + :, U`|uh||
+|Ââ⁺|/ɑ/|`Ctrl + ^, A`|ah|Currently no applications|
+|Êê⁺|/ɛ/|`Ctrl + ^, E`|eh|e.g. Shanghainese *sê* /sɛ˥˨/ (“三”, three)|
+|Îî⁺|/ʑ̩/|`Ctrl + ^, I`|iy|e.g. Shanghainese *yî* /jʑ̩˨˨˧/ (“移”, shift)|
+|Ôô⁺|/ɔ/|`Ctrl + ^, O`|oh|e.g. Shanghainese *bô* /pɔ˥˩/ (“包”, bag)|
+|Ûû⁺|/z̩ʷ/|`Ctrl + ^, U`|uw|Also /ʉ/ or /ʮ/<br>e.g. Obsolete Shanghainese *zû* /t͡sz̩ʷ/ (“朱”, a surname)|
+|Åå⁺|/ɒ/|`Ctrl + @, A`|ao|e.g. Shanghainese *yån* /jɒ̃˨˨˧/(“旺<sub>白</sub>”, well burning)|
+
+<span style="color:blue">Blue letters</span> indicate usage of combining diacritical marks / <span style="color:blue">蓝色</span>表示字母和附加符号的组合
