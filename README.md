@@ -8,7 +8,7 @@ Keyboard shortcuts are used in `UStandard.dotm`.
 
 ## Consonant Letters / 辅音字母
 
-|Letter<br>字母|IPA<br>国际音标|Shortcut<br>快捷键|Diacriticless<br>无附加符号|Note<br>说明|
+|Letter<br>字母|IPA|Shortcut<br>快捷键|Diacriticless<br>无附加符号|Note<br>说明|
 |:-|:-|:-|:-|:-|
 |Ᵽᵽ|/ɸ/|`Ctrl + Q, P`|ph||
 |Ƀƀ|/β/|`Ctrl + Q, B`|bh||
@@ -33,7 +33,7 @@ Keyboard shortcuts are used in `UStandard.dotm`.
 
 ## Vowel Letters / 元音字母
 
-|Letter<br>字母|IPA<br>国际音标|Shortcut<br>快捷键|Diacriticless<br>无附加符号|Note<br>说明|
+|Letter<br>字母|IPA|Shortcut<br>快捷键|Diacriticless<br>无附加符号|Note<br>说明|
 |:-|:-|:-|:-|:-|
 |Ää+|/a/|`Ctrl + :, A`|ae|e.g. 绯府正音 *<span style="color:blue">ǰ</span>i<span style="color:blue">ǟ</span>n* /t͡ɕjɛn˥/ (“坚”, firm),<br>Shanghainese *dhän* /dã˨˨˧/ (“打”, hit)|
 |Ëë|/ɤ/|`Ctrl + :, E`|eo||
@@ -47,4 +47,13 @@ Keyboard shortcuts are used in `UStandard.dotm`.
 |Ûû⁺|/z̩ʷ/|`Ctrl + ^, U`|uw|Also /ʉ/ or /ʮ/<br>e.g. Obsolete Shanghainese *zû* /t͡sz̩ʷ/ (“朱”, a surname)|
 |Åå⁺|/ɒ/|`Ctrl + @, A`|ao|e.g. Shanghainese *yån* /jɒ̃˨˨˧/(“旺<sub>白</sub>”, well burning)|
 
-<span style="color:blue">Blue letters</span> indicate usage of combining diacritical marks / <span style="color:blue">蓝色</span>表示字母和附加符号的组合
+<span style="color:blue">Blue letters</span> indicate usage of combining diacritics / <span style="color:blue">蓝色</span>表示字母和附加符号的组合
+
+## Diacritics on Consonants / 辅音附加符号
+
+|Letter<br>字母|IPA|Shortcut<br>快捷键|Diacriticless<br>无附加符号|Note<br>说明|
+|:-|:-|:-|:-|:-|
+|◌̌|/◌̢/|`Ctrl + Q, V or H`|-h|Retroflex / 翘舌化|
+|◌́|/◌ʲ/|`Ctrl + Q, / or Y`|-y|Palatalized / 颚化|
+|◌̇⁺|/◌̪/|`Ctrl + Q, . or F`|-f|Dentalized / 齿化<br>建议直接使用相应字母，而非字母和附加符号|
+|◌̵⁺||||Spirantized / 擦化<br>应直接使用相应字母|
