@@ -57,3 +57,18 @@ Keyboard shortcuts are used in `UStandard.dotm`.
 |◌́|/◌ʲ/|`Ctrl + Q, / or Y`|-y|Palatalized / 颚化|
 |◌̇⁺|/◌̪/|`Ctrl + Q, . or F`|-f|Dentalized / 齿化<br>建议直接使用相应字母，而非字母和附加符号|
 |◌̵⁺||||Spirantized / 擦化<br>应直接使用相应字母|
+
+## Diacritics on Vowels / 元音附加符号
+
+|Letter<br>字母|IPA|Shortcut<br>快捷键|Diacriticless<br>无附加符号|Note<br>说明|
+|:-|:-|:-|:-|:-|
+|◌̈|/◌̈/|`Ctrl + Q, :`||unregularized (advanced/retracted) / 非正则化（前/后化）<br>应直接使用相应字母
+|◌̂|/˦˥˨/|`Ctrl + Q, ^`||exaggerated (raised/lowered) / 夸张化（高/低化）<br>应直接使用相应字母
+|◌̄|/˥/|`Ctrl + Q, - or 1`|1|*Yinping* / 阴平
+|◌̊|/˧/|`Ctrl + Q, o`|2|*Yangping* / 阳平
+|◌́|/˧˥/|`Ctrl + Q, / or 4`|3|*Yinshang* / 阴上
+|◌̒|/˩˧/|`Ctrl + Q, ' or 5`|4|*Yangshang* / 阳上
+|◌̀|/˥˩/|`Ctrl + Q, \ or 7`|5|*Yinqu* / 阴去
+|◌̓|/˩/|`Ctrl + Q, ,`|6|*Yangqu* / 阳去
+|◌̉*|/˦˥˨/ |`Ctrl + Q, ?`|7|*Yinru* / 阴入
+|◌̌|/˨˩˦/|`Ctrl + Q, v or 6`|8|*Yangru* / 阳入
