@@ -70,5 +70,5 @@ Keyboard shortcuts are used in `UStandard.dotm`.
 |◌̒|/˩˧/|`Ctrl + Q, ' or 5`|4|*Yangshang* / 阳上
 |◌̀|/˥˩/|`Ctrl + Q, \ or 7`|5|*Yinqu* / 阴去
 |◌̓|/˩/|`Ctrl + Q, ,`|6|*Yangqu* / 阳去
-|◌̉*|/˦˥˨/ |`Ctrl + Q, ?`|7|*Yinru* / 阴入
+|◌̉|/˦˥˨/ |`Ctrl + Q, ?`|7|*Yinru* / 阴入
 |◌̌|/˨˩˦/|`Ctrl + Q, v or 6`|8|*Yangru* / 阳入
