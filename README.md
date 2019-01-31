@@ -35,7 +35,7 @@ Keyboard shortcuts are used in `UStandard.dotm`.
 
 |Letter<br>字母|IPA|Shortcut<br>快捷键|Diacriticless<br>无附加符号|Note<br>说明|
 |:-|:-|:-|:-|:-|
-|Ää+|/a/|`Ctrl + :, A`|ae|e.g. 绯府正音 *<span style="color:blue">ǰ</span>i<span style="color:blue">ǟ</span>n* /t͡ɕjɛn˥/ (“坚”, firm),<br>Shanghainese *dhän* /dã˨˨˧/ (“打”, hit)|
+|Ää⁺|/a/|`Ctrl + :, A`|ae|e.g. 绯府正音 *<span style="color:blue">ǰ</span>i<span style="color:blue">ǟ</span>n* /t͡ɕjɛn˥/ (“坚”, firm),<br>Shanghainese *dhän* /dã˨˨˧/ (“打”, hit)|
 |Ëë|/ɤ/|`Ctrl + :, E`|eo||
 |Ïï|/ɯ/|`Ctrl + :, I`|ih|Also /ɨ/ or /ʅ/|
 |Öö|/ø/|`Ctrl + :, O`|oe||
