@@ -281,7 +281,9 @@ End Sub
 Sub IPA_不成音节() 'F7.3
     Application.ScreenUpdating = False
     Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
-    If Selection = "y" Then ' F7.24
+    If Selection = "y" _
+    Or AscW(Selection) = &H27F Or AscW(Selection) = &H285 _
+    Or AscW(Selection) = &H2AE Or AscW(Selection) = &H2AF Then ' F7.24。I3.15增加舌尖元音
         Selection.MoveRight Unit:=wdCharacter, Count:=1
         InsertS (&H311) ' F10.30改。原为U+0306（短音节）
     Else
@@ -393,6 +395,7 @@ Sub IPA_唇腭化()
 End Sub
 Sub IPA_日化()
     InsertS (&H2DE)
+    InsertField "EQ \d\fo 2()"
 End Sub
 
 ' H3.2

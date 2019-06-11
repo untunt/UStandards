@@ -77,4 +77,14 @@ Sub Unicode«–ªª10¥Œ()
         Unicode«–ªª
     Next i
 End Sub
-
+Public Function InsertField(Content As String) ' I6.11
+    Application.ScreenUpdating = False
+    Selection.Fields.Add Range:=Selection.Range, Type:=wdFieldEmpty, PreserveFormatting:=False
+    Selection.TypeBackspace
+    Selection.Delete
+    Selection.TypeText Text:=Content
+    Selection.MoveRight Unit:=wdCharacter, Count:=1
+    ActiveWindow.View.ShowFieldCodes = Not ActiveWindow.View.ShowFieldCodes
+    ActiveWindow.View.ShowFieldCodes = Not ActiveWindow.View.ShowFieldCodes
+    Application.ScreenUpdating = True
+End Function
