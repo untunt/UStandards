@@ -394,8 +394,18 @@ Sub IPA_´½ëñ»¯()
     InsertS (&H1DA3)
 End Sub
 Sub IPA_ÈÕ»¯()
-    InsertS (&H2DE)
-    InsertField "EQ \d\fo 2()"
+    Application.ScreenUpdating = False
+    Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
+    If Selection = ChrW(&H283) Then
+        Selection.MoveRight Unit:=wdCharacter, Count:=1
+        InsertField "EQ \d\ba 1()"
+        InsertS (&H2DE)
+        InsertField "EQ \d\fo 3()"
+    Else
+        Selection.MoveRight Unit:=wdCharacter, Count:=1
+        InsertS (&H2DE)
+        InsertField "EQ \d\fo 2()"
+    End If
 End Sub
 
 ' H3.2

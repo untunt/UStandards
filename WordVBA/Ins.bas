@@ -86,5 +86,7 @@ Public Function InsertField(Content As String) ' I6.11
     Selection.MoveRight Unit:=wdCharacter, Count:=1
     ActiveWindow.View.ShowFieldCodes = Not ActiveWindow.View.ShowFieldCodes
     ActiveWindow.View.ShowFieldCodes = Not ActiveWindow.View.ShowFieldCodes
+    Selection.TypeText Text:="a"
+    Selection.TypeBackspace
     Application.ScreenUpdating = True
 End Function
