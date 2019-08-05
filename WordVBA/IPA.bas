@@ -510,3 +510,6 @@ End Sub
 Sub IPA_q_sup()
     InsertS (&H2C0)
 End Sub
+Sub IPA_schwa_sup()
+    InsertS (&H1D4A)
+End Sub
