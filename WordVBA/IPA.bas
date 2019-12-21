@@ -394,18 +394,43 @@ Sub IPA_唇腭化()
     InsertS (&H1DA3)
 End Sub
 Sub IPA_日化()
+    Dim Predecessor As String
+    Dim CharsNeedMoveBa1 As String
+    Dim CharsNeedMoveBa2 As String
+    Dim CharsNeedNoProc As String
+    Dim CharsNeedMoveFo3 As String
+    CharsNeedMoveBa1 = CharsNeedMoveBa1 & ChrW(&H283)   '龈后s
+    CharsNeedMoveBa1 = CharsNeedMoveBa1 & ChrW(&H292)   '龈后z
+    CharsNeedMoveBa1 = CharsNeedMoveBa1 & ChrW(&H259)   'schwa
+    CharsNeedMoveBa1 = CharsNeedMoveBa1 & ChrW(&H26F)   '翻转m
+    CharsNeedMoveBa1 = CharsNeedMoveBa1 & ChrW(&H1D07)  '小型E
+    CharsNeedMoveBa2 = CharsNeedMoveBa2 & ChrW(&H1D00)  '小型A
+    CharsNeedNoProc = CharsNeedNoProc & ChrW(&H28C)     '翻转v
+    CharsNeedMoveFo3 = CharsNeedMoveBa1 & CharsNeedMoveBa2
+    CharsNeedMoveFo3 = CharsNeedMoveFo3 & "grtvwxyz"
+    CharsNeedMoveFo3 = CharsNeedMoveFo3 & ChrW(&H276)   '小型OE
+    CharsNeedMoveFo3 = CharsNeedMoveFo3 & ChrW(&H28B)   '手写v
+
     Application.ScreenUpdating = False
     Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
-    If Selection = ChrW(&H283) Then
-        Selection.MoveRight Unit:=wdCharacter, Count:=1
+    Predecessor = Selection
+    Selection.MoveRight Unit:=wdCharacter, Count:=1
+
+    If InStr(CharsNeedMoveBa1, Predecessor) Then
         InsertField "EQ \d\ba 1()"
-        InsertS (&H2DE)
+    ElseIf InStr(CharsNeedMoveBa2, Predecessor) Then
+        InsertField "EQ \d\ba 2()"
+    End If
+
+    InsertS (&H2DE)
+
+    If InStr(CharsNeedMoveFo3, Predecessor) Then
         InsertField "EQ \d\fo 3()"
-    Else
-        Selection.MoveRight Unit:=wdCharacter, Count:=1
-        InsertS (&H2DE)
+    ElseIf Not InStr(CharsNeedNoProc, Predecessor) Then
         InsertField "EQ \d\fo 2()"
     End If
+
+    Application.ScreenUpdating = True
 End Sub
 
 ' H3.2
