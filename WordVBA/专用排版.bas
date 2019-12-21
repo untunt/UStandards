@@ -1,10 +1,14 @@
 Attribute VB_Name = "专用排版"
 Option Explicit
 Sub 自定义字符缩放()
-    Selection.Font.Scaling = InputBox("输入字符缩放比例（%）", "自定义字符缩放", Selection.Font.Scaling)
+    Dim Temp As String
+    Temp = InputBox("输入字符缩放比例（%）", "自定义字符缩放", Selection.Font.Scaling)
+    If Temp <> "" Then Selection.Font.Scaling = Temp
 End Sub
 Sub 自定义字符位置()
-    Selection.Font.Position = InputBox("输入字符位置（磅）", "自定义字符位置", Selection.Font.Position)
+    Dim Temp As String
+    Temp = InputBox("输入字符位置（磅）", "自定义字符位置", Selection.Font.Position)
+    If Temp <> "" Then Selection.Font.Position = Temp
 End Sub
 
 Sub 合一音标() ' completed F5.17
@@ -107,3 +111,20 @@ Function 下标字(Str As String)
     ActiveWindow.View.ShowFieldCodes = Not ActiveWindow.View.ShowFieldCodes
     Application.ScreenUpdating = True
 End Function
+Sub 移除零宽间隔()
+    With Selection.Find
+        .Text = ChrW(&H200B)
+        .Replacement.Text = ""
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = False
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchByte = True
+        .MatchAllWordForms = False
+        .MatchSoundsLike = False
+        .MatchWildcards = False
+        .MatchFuzzy = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+End Sub
