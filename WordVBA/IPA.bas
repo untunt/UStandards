@@ -508,7 +508,7 @@ Sub IPA_toneright1()
 End Sub
 Sub SIL()
     Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
-    Selection.Font.Name = "Doulos SIL"
+    Selection.Font.Name = "Doulos SIL Compact"
     Selection.MoveRight Unit:=wdCharacter, Count:=1
 End Sub
 Sub IPA_r_sup()
