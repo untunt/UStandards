@@ -538,3 +538,228 @@ End Sub
 Sub IPA_schwa_sup()
     InsertS (&H1D4A)
 End Sub
+' 以下是L2.21
+Sub IPA_half_long()
+    InsertS (&H2D1)
+End Sub
+Sub IPA_uvularized()
+    InsertS (&H2B6)
+End Sub
+Sub IPA_i_bar()
+    InsertS (&H1D7B)
+End Sub
+Sub IPA_u_bar()
+    InsertS (&H1D7F)
+End Sub
+Sub IPA_iota()
+    InsertS (&H269)
+End Sub
+Sub IPA_U_small()
+    InsertS (&H1D1C)
+End Sub
+Sub IPA_i_dotless()
+    InsertS (&H131)
+End Sub
+Sub IPA_omega_close()
+    InsertS (&H277)
+End Sub
+Sub IPA_p_click()
+    InsertS (&H298)
+End Sub
+Sub IPA_th_click()
+    InsertS (&H1C0)
+End Sub
+Sub IPA_t_click()
+    InsertS (&H1C3)
+End Sub
+Sub IPA_c_click()
+    InsertS (&H1C2)
+End Sub
+Sub IPA_l_click()
+    InsertS (&H1C1)
+End Sub
+Sub IPA_b_imp()
+    InsertS (&H253)
+End Sub
+Sub IPA_d_imp()
+    InsertS (&H257)
+End Sub
+Sub IPA_dr_imp()
+    InsertS (&H1D91)
+End Sub
+Sub IPA_gy_imp()
+    InsertS (&H284)
+End Sub
+Sub IPA_g_imp()
+    InsertS (&H260)
+End Sub
+Sub IPA_gg_imp()
+    InsertS (&H29B)
+End Sub
+Sub IPA_sj_sound()
+    InsertS (&H267)
+End Sub
+Sub IPA_ww()
+    InsertS (&H2AC)
+End Sub
+Sub IPA_bidental()
+    InsertS (&H2AD)
+End Sub
+Sub IPA_reversed_excl()
+    InsertS (&HA1)
+End Sub
+Sub IPA_j_bar()
+    InsertS (&H249)
+End Sub
+Sub IPA_n_sup()
+    InsertS (&H207F)
+End Sub
+Sub IPA_s_sup()
+    InsertS (&H2E2)
+End Sub
+Sub IPA_chi_sup()
+    InsertS (&H1D61)
+End Sub
+Sub IPA_breve2_above()
+    InsertS (&H35D)
+End Sub
+Sub IPA_alveolarized()
+    InsertS (&H347)
+End Sub
+Sub IPA_dot_above()
+    InsertS (&H307)
+End Sub
+Sub IPA_fortis()
+    InsertS (&H348)
+End Sub
+Sub IPA_lenis()
+    InsertS (&H349)
+End Sub
+Sub IPA_denasal()
+    InsertS (&H34A)
+End Sub
+Sub IPA_high_high()
+    InsertS (&H30B)
+End Sub
+Sub IPA_low_low()
+    InsertS (&H30F)
+End Sub
+Sub IPA_angle_l()
+    InsertS (&H27E8)
+End Sub
+Sub IPA_angle_r()
+    InsertS (&H27E9)
+End Sub
+Sub IPA_ts_lig()
+    InsertS (&H2A6)
+End Sub
+Sub IPA_dz_lig()
+    InsertS (&H2A3)
+End Sub
+Sub IPA_tsh_lig()
+    InsertS (&H2A7)
+End Sub
+Sub IPA_dj_lig()
+    InsertS (&H2A4)
+End Sub
+Sub IPA_tsr_lig()
+    InsertS (&HAB67)
+End Sub
+Sub IPA_dzr_lig()
+    InsertS (&HAB66)
+End Sub
+Sub IPA_tsy_lig()
+    InsertS (&H2A8)
+End Sub
+Sub IPA_dzy_lig()
+    InsertS (&H2A5)
+End Sub
+Sub IPA_sup_0()
+    InsertS (&H2070)
+End Sub
+Sub IPA_sup_1()
+    InsertS (&HB9)
+End Sub
+Sub IPA_sup_2()
+    InsertS (&HB2)
+End Sub
+Sub IPA_sup_3()
+    InsertS (&HB3)
+End Sub
+Sub IPA_sup_4()
+    InsertS (&H2074)
+End Sub
+Sub IPA_sup_5()
+    InsertS (&H2075)
+End Sub
+Sub IPA_sup_6()
+    InsertS (&H2076)
+End Sub
+Sub IPA_sub_0()
+    InsertS (&H2080)
+End Sub
+Sub IPA_sub_1()
+    InsertS (&H2081)
+End Sub
+Sub IPA_sub_2()
+    InsertS (&H2082)
+End Sub
+Sub IPA_sub_3()
+    InsertS (&H2083)
+End Sub
+Sub IPA_sub_4()
+    InsertS (&H2084)
+End Sub
+Sub IPA_sub_5()
+    InsertS (&H2085)
+End Sub
+Sub IPA_sub_6()
+    InsertS (&H2086)
+End Sub
+Sub IPA_sup_hyphen()
+    InsertS (&H207B)
+End Sub
+Sub IPA_sup_para_l()
+    InsertS (&H207D)
+End Sub
+Sub IPA_sup_para_r()
+    InsertS (&H207E)
+End Sub
+Sub IPA_sub_para_l()
+    InsertS (&H208D)
+End Sub
+Sub IPA_sub_para_r()
+    InsertS (&H208E)
+End Sub
+Sub IPA_sub_hyphen()
+    InsertS (&H208B)
+End Sub
+Sub IPA_软腭化或咽化()
+    ' L6.13
+    Dim From As String
+    Set Dic = CreateObject("Scripting.Dictionary")
+    Dic.Add "l", &H26B
+    Dic.Add "b", &H1D6C
+    Dic.Add "d", &H1D6D
+    Dic.Add "f", &H1D6E
+    Dic.Add "m", &H1D6F
+    Dic.Add "n", &H1D70
+    Dic.Add "p", &H1D71
+    Dic.Add "r", &H1D72
+    Dic.Add ChrW(&H27E), &H1D73
+    Dic.Add "s", &H1D74
+    Dic.Add "t", &H1D75
+    Dic.Add "z", &H1D76
+    Dic.Add "L", &H2C62
+
+    Application.ScreenUpdating = False
+    Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
+    From = Selection
+    If Dic.Exists(From) Then
+        InsertS (Dic.Item(From))
+    Else
+        Selection.MoveRight Unit:=wdCharacter, Count:=1
+        InsertS (&H334)
+    End If
+    Application.ScreenUpdating = True
+End Sub
