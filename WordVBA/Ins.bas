@@ -1,9 +1,13 @@
 Attribute VB_Name = "Ins"
-Public Function InsertS(n As Integer)
+Public Function InsertS(n)
     'Selection.InsertSSymbol CharacterNumber:=n, Font:="+西文正文", Unicode:=True
-    Selection.TypeText Text:=ChrW(n) ' E12.6 修改
+    If TypeName(n) = "Integer" Then
+        Selection.TypeText Text:=ChrW(n) ' E12.6 修改
+    Else
+        Selection.TypeText Text:=n
+    End If
 End Function
-Public Function InsertST(n As Integer)
+Public Function InsertST(n)
     InsertS (n)
     'Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
     '？

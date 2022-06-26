@@ -734,9 +734,23 @@ End Sub
 Sub IPA_sub_hyphen()
     InsertS (&H208B)
 End Sub
+Public Function 字典转换(Dic, DefaultTo)
+    ' L6.26
+    Application.ScreenUpdating = False
+    Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
+    From = Selection
+    If Dic.Exists(From) Then
+        InsertS (Dic.Item(From))
+    Else
+        Selection.MoveRight Unit:=wdCharacter, Count:=1
+        If DefaultTo <> 0 Then
+            InsertS (DefaultTo)
+        End If
+    End If
+    Application.ScreenUpdating = True
+End Function
 Sub IPA_软腭化或咽化()
     ' L6.13
-    Dim From As String
     Set Dic = CreateObject("Scripting.Dictionary")
     Dic.Add "l", &H26B
     Dic.Add "b", &H1D6C
@@ -751,15 +765,217 @@ Sub IPA_软腭化或咽化()
     Dic.Add "t", &H1D75
     Dic.Add "z", &H1D76
     Dic.Add "L", &H2C62
-
-    Application.ScreenUpdating = False
-    Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
-    From = Selection
-    If Dic.Exists(From) Then
-        InsertS (Dic.Item(From))
-    Else
-        Selection.MoveRight Unit:=wdCharacter, Count:=1
-        InsertS (&H334)
-    End If
-    Application.ScreenUpdating = True
+    字典转换 Dic, &H334
+End Sub
+Sub 上标或小型大写()
+    Set Dic = CreateObject("Scripting.Dictionary")
+    Dic.Add ChrW(&H30), &H2070
+    Dic.Add ChrW(&H31), &HB9
+    Dic.Add ChrW(&H32), &HB2
+    Dic.Add ChrW(&H33), &HB3
+    Dic.Add ChrW(&H34), &H2074
+    Dic.Add ChrW(&H35), &H2075
+    Dic.Add ChrW(&H36), &H2076
+    Dic.Add ChrW(&H37), &H2077
+    Dic.Add ChrW(&H38), &H2078
+    Dic.Add ChrW(&H39), &H2079
+    Dic.Add ChrW(&H61), &H1D43
+    Dic.Add ChrW(&H62), &H1D47
+    Dic.Add ChrW(&H63), &H1D9C
+    Dic.Add ChrW(&H64), &H1D48
+    Dic.Add ChrW(&H65), &H1D49
+    Dic.Add ChrW(&H66), &H1DA0
+    Dic.Add ChrW(&H67), &H1D4D
+    Dic.Add ChrW(&H68), &H2B0
+    Dic.Add ChrW(&H69), &H2071
+    Dic.Add ChrW(&H6A), &H2B2
+    Dic.Add ChrW(&H6B), &H1D4F
+    Dic.Add ChrW(&H6C), &H2E1
+    Dic.Add ChrW(&H6D), &H1D50
+    Dic.Add ChrW(&H6E), &H207F
+    Dic.Add ChrW(&H6F), &H1D52
+    Dic.Add ChrW(&H70), &H1D56
+    Dic.Add ChrW(&H71), ChrW(&HD801) + ChrW(&HD800 + &H7A5)
+    Dic.Add ChrW(&H72), &H2B3
+    Dic.Add ChrW(&H73), &H2E2
+    Dic.Add ChrW(&H74), &H1D57
+    Dic.Add ChrW(&H75), &H1D58
+    Dic.Add ChrW(&H76), &H1D5B
+    Dic.Add ChrW(&H77), &H2B7
+    Dic.Add ChrW(&H78), &H2E3
+    Dic.Add ChrW(&H79), &H2B8
+    Dic.Add ChrW(&H7A), &H1DBB
+    Dic.Add ChrW(&H43), &HA7F2
+    Dic.Add ChrW(&H46), &HA7F3
+    Dic.Add ChrW(&H49), &H1D35
+    Dic.Add ChrW(&H4E), &H1D3A
+    Dic.Add ChrW(&H51), &HA7F4
+    Dic.Add ChrW(&H259), &H1D4A
+    Dic.Add ChrW(&H2B), &H207A
+    Dic.Add ChrW(&H2212), &H207B
+    Dic.Add ChrW(&H2D), &H207B
+    Dic.Add ChrW(&H3D), &H207C
+    Dic.Add ChrW(&H28), &H207D
+    Dic.Add ChrW(&H29), &H207E
+    Dic.Add ChrW(&H271), &H1DAC
+    Dic.Add ChrW(&H273), &H1DAF
+    Dic.Add ChrW(&H272), &H1DAE
+    Dic.Add ChrW(&H14B), &H1D51
+    Dic.Add ChrW(&H274), &H1DB0
+    Dic.Add ChrW(&H288), ChrW(&HD801) + ChrW(&HD800 + &H7AF)
+    Dic.Add ChrW(&H256), ChrW(&HD801) + ChrW(&HD800 + &H78B)
+    Dic.Add ChrW(&H25F), &H1DA1
+    Dic.Add ChrW(&H261), &H1DA2
+    Dic.Add ChrW(&H262), ChrW(&HD801) + ChrW(&HD800 + &H792)
+    Dic.Add ChrW(&H2A1), ChrW(&HD801) + ChrW(&HD800 + &H7B3)
+    Dic.Add ChrW(&H294), &H2C0
+    Dic.Add ChrW(&H2A6), ChrW(&HD801) + ChrW(&HD800 + &H7AC)
+    Dic.Add ChrW(&H2A3), ChrW(&HD801) + ChrW(&HD800 + &H787)
+    Dic.Add ChrW(&H2A7), ChrW(&HD801) + ChrW(&HD800 + &H7AE)
+    Dic.Add ChrW(&H2A8), ChrW(&HD801) + ChrW(&HD800 + &H7AB)
+    Dic.Add ChrW(&H2A4), ChrW(&HD801) + ChrW(&HD800 + &H78A)
+    Dic.Add ChrW(&H2A5), ChrW(&HD801) + ChrW(&HD800 + &H789)
+    Dic.Add ChrW(&HAB67), ChrW(&HD801) + ChrW(&HD800 + &H7AD)
+    Dic.Add ChrW(&HAB66), ChrW(&HD801) + ChrW(&HD800 + &H788)
+    Dic.Add ChrW(&H278), &H1DB2
+    Dic.Add ChrW(&H3B2), &H1D5D
+    Dic.Add ChrW(&H3B8), &H1DBF
+    Dic.Add ChrW(&HF0), &H1D9E
+    Dic.Add ChrW(&H283), &H1DB4
+    Dic.Add ChrW(&H255), &H1D9D
+    Dic.Add ChrW(&H292), &H1DBE
+    Dic.Add ChrW(&H291), &H1DBD
+    Dic.Add ChrW(&H282), &H1DB3
+    Dic.Add ChrW(&H290), &H1DBC
+    Dic.Add ChrW(&H29D), &H1DA8
+    Dic.Add ChrW(&H267), ChrW(&HD801) + ChrW(&HD800 + &H797)
+    Dic.Add ChrW(&H263), &H2E0
+    Dic.Add ChrW(&H3C7), &H1D61
+    Dic.Add ChrW(&H281), &H2B6
+    Dic.Add ChrW(&H127), ChrW(&HD801) + ChrW(&HD800 + &H795)
+    Dic.Add ChrW(&H2A9), ChrW(&HD801) + ChrW(&HD800 + &H790)
+    Dic.Add ChrW(&H295), &H2E4
+    Dic.Add ChrW(&H266), &H2B1
+    Dic.Add ChrW(&H28B), &H1DB9
+    Dic.Add ChrW(&H279), &H2B4
+    Dic.Add ChrW(&H27B), &H2B5
+    Dic.Add ChrW(&H265), &H1DA3
+    Dic.Add ChrW(&H28D), &HAB69
+    Dic.Add ChrW(&H270), &H1DAD
+    Dic.Add ChrW(&H2C71), ChrW(&HD801) + ChrW(&HD800 + &H7B0)
+    Dic.Add ChrW(&H27E), ChrW(&HD801) + ChrW(&HD800 + &H7A9)
+    Dic.Add ChrW(&H27D), ChrW(&HD801) + ChrW(&HD800 + &H7A8)
+    Dic.Add ChrW(&H299), ChrW(&HD801) + ChrW(&HD800 + &H784)
+    Dic.Add ChrW(&H280), ChrW(&HD801) + ChrW(&HD800 + &H7AA)
+    Dic.Add ChrW(&H29C), ChrW(&HD801) + ChrW(&HD800 + &H796)
+    Dic.Add ChrW(&H2A2), ChrW(&HD801) + ChrW(&HD800 + &H7B4)
+    Dic.Add ChrW(&H26C), ChrW(&HD801) + ChrW(&HD800 + &H79B)
+    Dic.Add ChrW(&H2AA), ChrW(&HD801) + ChrW(&HD800 + &H799)
+    Dic.Add ChrW(&H26E), ChrW(&HD801) + ChrW(&HD800 + &H79E)
+    Dic.Add ChrW(&H2AB), ChrW(&HD801) + ChrW(&HD800 + &H79A)
+    Dic.Add ChrW(&HA78E), ChrW(&HD801) + ChrW(&HD800 + &H79D)
+    Dic.Add ChrW(&H26B), &HAB5E
+    Dic.Add ChrW(&H26D), &H1DA9
+    Dic.Add ChrW(&H28E), ChrW(&HD801) + ChrW(&HD800 + &H7A0)
+    Dic.Add ChrW(&H29F), &H1DAB
+    Dic.Add ChrW(&H27A), ChrW(&HD801) + ChrW(&HD800 + &H7A6)
+    Dic.Add ChrW(&HD801) + ChrW(&HDF08), ChrW(&HD801) + ChrW(&HD800 + &H7A7)
+    Dic.Add ChrW(&H253), ChrW(&HD801) + ChrW(&HD800 + &H785)
+    Dic.Add ChrW(&H257), ChrW(&HD801) + ChrW(&HD800 + &H78C)
+    Dic.Add ChrW(&H1D91), ChrW(&HD801) + ChrW(&HD800 + &H78D)
+    Dic.Add ChrW(&H284), ChrW(&HD801) + ChrW(&HD800 + &H798)
+    Dic.Add ChrW(&H260), ChrW(&HD801) + ChrW(&HD800 + &H793)
+    Dic.Add ChrW(&H29B), ChrW(&HD801) + ChrW(&HD800 + &H794)
+    Dic.Add ChrW(&H298), ChrW(&HD801) + ChrW(&HD800 + &H7B5)
+    Dic.Add ChrW(&H1C0), ChrW(&HD801) + ChrW(&HD800 + &H7B6)
+    Dic.Add ChrW(&H1C3), &HA71D
+    Dic.Add ChrW(&HD801) + ChrW(&HDF0A), ChrW(&HD801) + ChrW(&HD800 + &H7B9)
+    Dic.Add ChrW(&H1C2), ChrW(&HD801) + ChrW(&HD800 + &H7B8)
+    Dic.Add ChrW(&H1C1), ChrW(&HD801) + ChrW(&HD800 + &H7B7)
+    Dic.Add ChrW(&H268), &H1DA4
+    Dic.Add ChrW(&H289), &H1DB6
+    Dic.Add ChrW(&H26F), &H1D5A
+    Dic.Add ChrW(&H26A), &H1DA6
+    Dic.Add ChrW(&H28F), ChrW(&HD801) + ChrW(&HD800 + &H7B2)
+    Dic.Add ChrW(&H28A), &H1DB7
+    Dic.Add ChrW(&HF8), ChrW(&HD801) + ChrW(&HD800 + &H7A2)
+    Dic.Add ChrW(&H258), ChrW(&HD801) + ChrW(&HD800 + &H78E)
+    Dic.Add ChrW(&H275), &H1DB1
+    Dic.Add ChrW(&H264), ChrW(&HD801) + ChrW(&HD800 + &H791)
+    Dic.Add ChrW(&H25B), &H1D4B
+    Dic.Add ChrW(&H153), &HA7F9
+    Dic.Add ChrW(&H25C), &H1D9F
+    Dic.Add ChrW(&H25E), ChrW(&HD801) + ChrW(&HD800 + &H78F)
+    Dic.Add ChrW(&H28C), &H1DBA
+    Dic.Add ChrW(&H254), &H1D53
+    Dic.Add ChrW(&HE6), ChrW(&HD801) + ChrW(&HD800 + &H783)
+    Dic.Add ChrW(&H276), ChrW(&HD801) + ChrW(&HD800 + &H7A3)
+    Dic.Add ChrW(&H250), &H1D44
+    Dic.Add ChrW(&H251), &H1D45
+    Dic.Add ChrW(&H252), &H1D9B
+    字典转换 Dic, 0
+End Sub
+Sub 下标()
+    Set Dic = CreateObject("Scripting.Dictionary")
+    Dic.Add ChrW(&H30), &H2080
+    Dic.Add ChrW(&H31), &H2081
+    Dic.Add ChrW(&H32), &H2082
+    Dic.Add ChrW(&H33), &H2083
+    Dic.Add ChrW(&H34), &H2084
+    Dic.Add ChrW(&H35), &H2085
+    Dic.Add ChrW(&H36), &H2086
+    Dic.Add ChrW(&H37), &H2087
+    Dic.Add ChrW(&H38), &H2088
+    Dic.Add ChrW(&H39), &H2089
+    Dic.Add ChrW(&H61), &H2090
+    Dic.Add ChrW(&H65), &H2091
+    Dic.Add ChrW(&H68), &H2095
+    Dic.Add ChrW(&H69), &H1D62
+    Dic.Add ChrW(&H6A), &H2C7C
+    Dic.Add ChrW(&H6B), &H2096
+    Dic.Add ChrW(&H6C), &H2097
+    Dic.Add ChrW(&H6D), &H2098
+    Dic.Add ChrW(&H6E), &H2099
+    Dic.Add ChrW(&H6F), &H2092
+    Dic.Add ChrW(&H70), &H209A
+    Dic.Add ChrW(&H72), &H1D63
+    Dic.Add ChrW(&H73), &H209B
+    Dic.Add ChrW(&H74), &H209C
+    Dic.Add ChrW(&H75), &H1D64
+    Dic.Add ChrW(&H76), &H1D65
+    Dic.Add ChrW(&H78), &H2093
+    Dic.Add ChrW(&H43), &H1D00
+    Dic.Add ChrW(&H46), &H299
+    Dic.Add ChrW(&H49), &H1D04
+    Dic.Add ChrW(&H4E), &H1D05
+    Dic.Add ChrW(&H51), &H1D07
+    Dic.Add ChrW(&H53), &HA730
+    Dic.Add ChrW(&H58), &H262
+    Dic.Add ChrW(&H59), &H29C
+    Dic.Add ChrW(&H5A), &H26A
+    Dic.Add ChrW(&H259), &H1D0A
+    Dic.Add ChrW(&H2B), &H1D0B
+    Dic.Add ChrW(&H2212), &H29F
+    Dic.Add ChrW(&H2D), &H1D0D
+    Dic.Add ChrW(&H3D), &H274
+    Dic.Add ChrW(&H28), &H1D0F
+    Dic.Add ChrW(&H29), &H1D18
+    Dic.Add ChrW(&H271), &HA7AF
+    Dic.Add ChrW(&H273), &H280
+    Dic.Add ChrW(&H272), &HA731
+    Dic.Add ChrW(&H14B), &H1D1B
+    Dic.Add ChrW(&H274), &H1D1C
+    Dic.Add ChrW(&H288), &H1D20
+    Dic.Add ChrW(&H256), &H1D21
+    Dic.Add ChrW(&H25F), &H2013
+    Dic.Add ChrW(&H261), &H28F
+    Dic.Add ChrW(&H262), &H1D22
+    Dic.Add ChrW(&H2A1), &H2094
+    Dic.Add ChrW(&H294), &H208A
+    Dic.Add ChrW(&H2A6), &H208B
+    Dic.Add ChrW(&H2A3), &H208B
+    Dic.Add ChrW(&H2A7), &H208C
+    Dic.Add ChrW(&H2A8), &H208D
+    Dic.Add ChrW(&H2A4), &H208E
+    字典转换 Dic, 0
 End Sub
