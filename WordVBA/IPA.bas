@@ -627,7 +627,9 @@ Sub IPA_alveolarized()
     InsertS (&H347)
 End Sub
 Sub IPA_dot_above()
-    InsertS (&H307)
+    Set Dic = CreateObject("Scripting.Dictionary")
+    Dic.Add "e", &H117
+    ×Öµä×ª»» Dic, &H307
 End Sub
 Sub IPA_fortis()
     InsertS (&H348)
@@ -978,4 +980,24 @@ Sub ÏÂ±ê()
     Dic.Add ChrW(&H2A8), &H208D
     Dic.Add ChrW(&H2A4), &H208E
     ×Öµä×ª»» Dic, 0
+End Sub
+Sub ±Ç»¯¸½¼Ó()
+    Set Dic = CreateObject("Scripting.Dictionary")
+    Dic.Add "A", &HC3
+    Dic.Add "a", &HE3
+    Dic.Add "E", &H1EBC
+    Dic.Add "e", &H1EBD
+    Dic.Add "I", &H128
+    Dic.Add "i", &H129
+    Dic.Add "N", &HD1
+    Dic.Add "n", &HF1
+    Dic.Add "O", &HD5
+    Dic.Add "o", &HF5
+    Dic.Add "U", &H168
+    Dic.Add "u", &H169
+    Dic.Add "V", &H1E7C
+    Dic.Add "v", &H1E7D
+    Dic.Add "Y", &H1EF8
+    Dic.Add "y", &H1EF9
+    ×Öµä×ª»» Dic, &H303
 End Sub
