@@ -769,7 +769,7 @@ Sub IPA_软腭化或咽化()
     Dic.Add "L", &H2C62
     字典转换 Dic, &H334
 End Sub
-Sub 上标或小型大写()
+Sub 上标()
     Set Dic = CreateObject("Scripting.Dictionary")
     Dic.Add ChrW(&H30), &H2070
     Dic.Add ChrW(&H31), &HB9
@@ -807,11 +807,28 @@ Sub 上标或小型大写()
     Dic.Add ChrW(&H78), &H2E3
     Dic.Add ChrW(&H79), &H2B8
     Dic.Add ChrW(&H7A), &H1DBB
+    Dic.Add ChrW(&H41), &H1D2C
+    Dic.Add ChrW(&H42), &H1D2E
     Dic.Add ChrW(&H43), &HA7F2
+    Dic.Add ChrW(&H44), &H1D30
+    Dic.Add ChrW(&H45), &H1D31
     Dic.Add ChrW(&H46), &HA7F3
+    Dic.Add ChrW(&H47), &H1D33
+    Dic.Add ChrW(&H48), &H1D34
     Dic.Add ChrW(&H49), &H1D35
+    Dic.Add ChrW(&H4A), &H1D36
+    Dic.Add ChrW(&H4B), &H1D37
+    Dic.Add ChrW(&H4C), &H1D38
+    Dic.Add ChrW(&H4D), &H1D39
     Dic.Add ChrW(&H4E), &H1D3A
+    Dic.Add ChrW(&H4F), &H1D3C
+    Dic.Add ChrW(&H50), &H1D3E
     Dic.Add ChrW(&H51), &HA7F4
+    Dic.Add ChrW(&H52), &H1D3F
+    Dic.Add ChrW(&H54), &H1D40
+    Dic.Add ChrW(&H55), &H1D41
+    Dic.Add ChrW(&H56), &H2C7D
+    Dic.Add ChrW(&H57), &H1D42
     Dic.Add ChrW(&H259), &H1D4A
     Dic.Add ChrW(&H2B), &H207A
     Dic.Add ChrW(&H2212), &H207B
@@ -917,7 +934,7 @@ Sub 上标或小型大写()
     Dic.Add ChrW(&H252), &H1D9B
     字典转换 Dic, 0
 End Sub
-Sub 下标()
+Sub 下标或小型大写()
     Set Dic = CreateObject("Scripting.Dictionary")
     Dic.Add ChrW(&H30), &H2080
     Dic.Add ChrW(&H31), &H2081
@@ -946,39 +963,38 @@ Sub 下标()
     Dic.Add ChrW(&H75), &H1D64
     Dic.Add ChrW(&H76), &H1D65
     Dic.Add ChrW(&H78), &H2093
-    Dic.Add ChrW(&H43), &H1D00
-    Dic.Add ChrW(&H46), &H299
-    Dic.Add ChrW(&H49), &H1D04
-    Dic.Add ChrW(&H4E), &H1D05
-    Dic.Add ChrW(&H51), &H1D07
-    Dic.Add ChrW(&H53), &HA730
-    Dic.Add ChrW(&H58), &H262
-    Dic.Add ChrW(&H59), &H29C
-    Dic.Add ChrW(&H5A), &H26A
-    Dic.Add ChrW(&H259), &H1D0A
-    Dic.Add ChrW(&H2B), &H1D0B
-    Dic.Add ChrW(&H2212), &H29F
-    Dic.Add ChrW(&H2D), &H1D0D
-    Dic.Add ChrW(&H3D), &H274
-    Dic.Add ChrW(&H28), &H1D0F
-    Dic.Add ChrW(&H29), &H1D18
-    Dic.Add ChrW(&H271), &HA7AF
-    Dic.Add ChrW(&H273), &H280
-    Dic.Add ChrW(&H272), &HA731
-    Dic.Add ChrW(&H14B), &H1D1B
-    Dic.Add ChrW(&H274), &H1D1C
-    Dic.Add ChrW(&H288), &H1D20
-    Dic.Add ChrW(&H256), &H1D21
-    Dic.Add ChrW(&H25F), &H2013
-    Dic.Add ChrW(&H261), &H28F
-    Dic.Add ChrW(&H262), &H1D22
-    Dic.Add ChrW(&H2A1), &H2094
-    Dic.Add ChrW(&H294), &H208A
-    Dic.Add ChrW(&H2A6), &H208B
-    Dic.Add ChrW(&H2A3), &H208B
-    Dic.Add ChrW(&H2A7), &H208C
-    Dic.Add ChrW(&H2A8), &H208D
-    Dic.Add ChrW(&H2A4), &H208E
+    Dic.Add ChrW(&H41), &H1D00
+    Dic.Add ChrW(&H42), &H299
+    Dic.Add ChrW(&H43), &H1D04
+    Dic.Add ChrW(&H44), &H1D05
+    Dic.Add ChrW(&H45), &H1D07
+    Dic.Add ChrW(&H46), &HA730
+    Dic.Add ChrW(&H47), &H262
+    Dic.Add ChrW(&H48), &H29C
+    Dic.Add ChrW(&H49), &H26A
+    Dic.Add ChrW(&H4A), &H1D0A
+    Dic.Add ChrW(&H4B), &H1D0B
+    Dic.Add ChrW(&H4C), &H29F
+    Dic.Add ChrW(&H4D), &H1D0D
+    Dic.Add ChrW(&H4E), &H274
+    Dic.Add ChrW(&H4F), &H1D0F
+    Dic.Add ChrW(&H50), &H1D18
+    Dic.Add ChrW(&H51), &HA7AF
+    Dic.Add ChrW(&H52), &H280
+    Dic.Add ChrW(&H53), &HA731
+    Dic.Add ChrW(&H54), &H1D1B
+    Dic.Add ChrW(&H55), &H1D1C
+    Dic.Add ChrW(&H56), &H1D20
+    Dic.Add ChrW(&H57), &H1D21
+    Dic.Add ChrW(&H59), &H28F
+    Dic.Add ChrW(&H5A), &H1D22
+    Dic.Add ChrW(&H259), &H2094
+    Dic.Add ChrW(&H2B), &H208A
+    Dic.Add ChrW(&H2212), &H208B
+    Dic.Add ChrW(&H2D), &H208B
+    Dic.Add ChrW(&H3D), &H208C
+    Dic.Add ChrW(&H28), &H208D
+    Dic.Add ChrW(&H29), &H208E
     字典转换 Dic, 0
 End Sub
 Sub 鼻化附加()
