@@ -154,7 +154,6 @@ End Sub
 Sub IPA_hj()
     InsertS (&H266)
 End Sub
-
 Sub IPA_i_cent()
     InsertS (&H268)
 End Sub
@@ -735,6 +734,33 @@ Sub IPA_sub_para_r()
 End Sub
 Sub IPA_sub_hyphen()
     InsertS (&H208B)
+End Sub
+Sub IPA_db_vert_line()
+    InsertS (&H2016)
+End Sub
+Sub IPA_i_up_bar()
+    InsertS (&H197)
+End Sub
+Sub IPA_j_up_bar()
+    InsertS (&H248)
+End Sub
+Sub IPA_spread()
+    InsertS (&H34D)
+End Sub
+Sub IPA_e_comb()
+    InsertS (&H364)
+End Sub
+Sub IPA_o_comb()
+    InsertS (&H366)
+End Sub
+Sub IPA_ayin_sup()
+    InsertS (&H2C1)
+End Sub
+Sub IPA_atr()
+    InsertS (&HAB6A)
+End Sub
+Sub IPA_rtr()
+    InsertS (&HAB6B)
 End Sub
 Public Function ×Öµä×ª»»(Dic, DefaultTo)
     ' L6.26
